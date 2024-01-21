@@ -1,0 +1,32 @@
+version: "3"
+
+services:
+  mc:
+    image: itzg/minecraft-server:latest
+    container_name: vanilla_server
+    ports:
+      - 25565:25565
+      #- 8100:8100
+    expose:
+      - 25565
+      #- 8100
+    environment:
+      EULA: "TRUE"
+      DIFFICULTY: 'hard'
+      VERSION: 1.20.1
+      MOTD: "\        \u00A7kAAA\u00A7r \u00A7l\u00A76El servidor de BiliBC034 \u00A77\u00A7kAAA\u00A7r"
+      WHITE_LIST: "TRUE"
+      GAMEMODE: survival
+      OPS: "bielinchi"
+      ANNOUNCE_PLAYER_ACHIEVEMENTS: 'FALSE'
+      MEMORY: '6G'
+      ICON: https://i.pinimg.com/originals/d0/46/1c/d0461cfb320be273d5c3082a561c4d36.jpg
+      OVERRIDE_ICON: "TRUE"
+      TYPE: PAPER
+      SPIGET_RESOURCES: 2124 #,83557
+    tty: true
+    stdin_open: true
+    restart: unless-stopped
+    volumes:
+      - ./:/app
+      - ./minecraft-data:/data
