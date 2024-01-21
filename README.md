@@ -1,2 +1,2 @@
 # Minecraft-Server-DC
-Minecrat server mades by a docker compose
+Minecrat server made by a docker compose
